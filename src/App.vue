@@ -2,9 +2,32 @@
   <div class = "fields">
     <h1>Добрейший вечерочек v.2.0.  </h1>
     <hr>
-   
+ 
 
-          <toolbar :current-comp="currentComp"></toolbar>    
+      <sum-info 
+      v-if="currentComp == 'sum-info'"
+      :fio = "fio"
+      :contact = "contact"
+      :skill = "skill"
+      >
+      </sum-info>
+
+      <fio 
+      v-if="currentComp == 'fio'"
+      :fio = "fio">
+      </fio>
+
+      <skills 
+      v-if="currentComp == 'skills'"
+      :skill = "skill">
+      </skills>
+
+      <contact 
+      v-if="currentComp == 'contact'"
+      :contact = "contact">
+      </contact>
+
+   <toolbar :current-comp="currentComp"></toolbar>    
 
     <div class="container">
       <component :is="currentComp"></component>
@@ -27,21 +50,33 @@ export default {
 name: 'app',
 data() {
   return {
-    currentComp: 'fio',
     
-    skills: '',
+    currentComp: 'fio',
+    fio: {
+      name: '',
+      secondName: '',
+      patronomyc: '',
+      bDay: Date
+     },
+
+    skill: {
+      skills: ''
+    },
+
     contact: {
       phone: '',
       email: ''
     }
-  };
+  }
+  
 },
+methods: {
 created() {
  bus.$on('switchComp', comp => {
            this.currentComp = comp;
       })
 
-
+}
 },
  components: {
     'fio': AppFIO,
