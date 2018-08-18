@@ -16,7 +16,6 @@
   :disabled="currentComp === 'fio'"
   >Back</button>
   
-
 <button 
   class="btn btn-success" 
   @click="switchComponent('skills')"
@@ -45,8 +44,7 @@ export default {
     fio: {
       type: Object
     } 
-    
-    
+        
   },
   methods: {
     switchComponent(comp) {

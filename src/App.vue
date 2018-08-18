@@ -2,9 +2,7 @@
   <div class = "fields">
     <h1>Добрейший вечерочек v.2.0.  </h1>
     <hr>
- 
-
-      <sum-info 
+       <sum-info 
       v-if="currentComp == 'sum-info'"
       :fio = "fio"
       :contact = "contact"
@@ -70,13 +68,13 @@ data() {
   }
   
 },
-methods: {
+
 created() {
  bus.$on('switchComp', comp => {
            this.currentComp = comp;
       })
 
-}
+
 },
  components: {
     'fio': AppFIO,

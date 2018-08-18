@@ -1,6 +1,5 @@
 <template>
  <div>
-   
     <label>Ваши профессиональные навыки:</label>
     <textarea v-model="skill.skills" class="form-control"></textarea>
    
@@ -18,7 +17,6 @@
     >Next</button>
     </div>
   </div>
-  
 </template>
 
 <script>

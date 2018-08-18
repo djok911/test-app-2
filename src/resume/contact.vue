@@ -41,7 +41,6 @@ export default {
     contact: {
       type: Object
       }
-      
     },
     
     methods: {
@@ -49,7 +48,7 @@ export default {
       bus.$emit('switchComp', comp);
     }
   }   
-   }
+}
 
 </script>
 
